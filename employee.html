@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* สไตล์ปุ่ม */
+        .button {
+            background-color: #100de9; /* สีเขียว */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        /* สไตล์เมื่อปุ่มถูกโฮเวอร์ */
+        .button:hover {
+            background-color: #40c3e4;
+        }
+    </style>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <button class="button" onclick="window.location.href='dashboard.html'">หน้าแรก</button>
+    <title>HO-Inventory</title>
+    <link rel="icon" href="./7656409.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script type="module" src="firebase.js"></script>
+</head>
+
+<body>
+
+    <div class="container mt-3">
+        <h1 style="text-align: center; font-size:60px;" >HO-Inventory</h1>
+        <input type="text" id="searchInput" class="form-control my-3" placeholder="ค้นหา...">
+        <button class="btn btn-primary" id="addEmployeeBtn">เพิ่มข้อมูล</button>
+        <button class="btn btn-success" id="exportBtn">Export to Excel</button>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">JIRA</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">S/N</th>
+                    <th scope="col">วันเริ่มงาน/คืนเครื่อง</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody id="tbody1"></tbody>
+        </table>
+    </div>
+
+
+</body>
+
+</html>
