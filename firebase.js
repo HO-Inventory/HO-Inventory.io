@@ -280,7 +280,7 @@ addEmployeeBtn.addEventListener('click', async () => {
 
 searchInput.addEventListener('input', function () {
     const filter = searchInput.value.toLowerCase();
-    const rows = tbody.getElementsByTagName('tr');
+    const rows = tbody.getElementsByTagName('tr', 'td');
 
     Array.from(rows).forEach(row => {
         const cells = row.getElementsByTagName('td');
