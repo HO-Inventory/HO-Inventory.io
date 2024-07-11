@@ -23,9 +23,9 @@ const searchInput = document.getElementById('searchInput');
 function addItemToTable(employee, key) {
     let trow = document.createElement("tr");
 
-    let td1 = document.createElement('td');
-    td1.innerHTML = employee.No;
-    trow.appendChild(td1);
+    // let td1 = document.createElement('td');
+    // td1.innerHTML = employee.No;
+    // trow.appendChild(td1);
 
     let td2 = document.createElement('td');
     td2.innerHTML = employee.Type;
@@ -177,11 +177,11 @@ addEmployeeBtn.addEventListener('click', async () => {
     Swal.fire({
         title: 'Add Employee',
         html:
-            `<div class="mb-3">
-             <label for="No" class="form-label">No</label>
-             <input type="number" class="form-control" id="No" value="${nextNo}" readonly>
-             </div>
-             <div class="mb-3">
+            //  `<div class="mb-3">
+            //  <label for="No" class="form-label">No</label>
+            //  <input type="number" class="form-control" id="No" value="${nextNo}" readonly>
+            //  </div>
+             `<div class="mb-3">
              <label for="Type" class="form-label">Type</label>
              <select id="Type" class="form-control" required>
              <option value="" disabled selected>-- Select Type --</option>
@@ -258,7 +258,7 @@ addEmployeeBtn.addEventListener('click', async () => {
             }
 
             const employee = {
-                No: nextNo,
+                // No: nextNo,
                 Type,
                 JIRA,
                 email,
@@ -300,11 +300,11 @@ function editEmployee(key, employee) {
     Swal.fire({
         title: 'Edit Employee',
         html:
-            `<div class="mb-3">
-                        <label for="No" class="form-label">No</label>
-                        <input type="number" class="form-control" id="No" value="${employee.No}" readonly>
-                    </div>
-                    <div class="mb-3">
+            // `<div class="mb-3">
+            //             <label for="No" class="form-label">No</label>
+            //             <input type="number" class="form-control" id="No" value="${employee.No}" readonly>
+            //         </div>
+                    `<div class="mb-3">
                         <label for="Type" class="form-label">Type</label>
                         <select id="Type" class="form-control" required>
                             <option value="พนักงานใหม่" ${employee.Type === 'พนักงานใหม่' ? 'selected' : ''}>พนักงานใหม่</option>
@@ -380,7 +380,7 @@ function editEmployee(key, employee) {
             }
 
             const updatedEmployee = {
-                No: employee.No,
+                // No: employee.No,
                 Type,
                 JIRA,
                 email,
@@ -452,7 +452,7 @@ function generateExcel(data) {
 
     data.forEach(employee => {
         ws_data.push([
-            employee.No,
+            // employee.No,
             employee.Type,
             employee.JIRA,
             employee.email,
